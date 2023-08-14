@@ -1,0 +1,38 @@
+{
+  "name": "pdfint",
+  "private": true,
+  "scripts": {
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore",
+    "typecheck": "vue-tsc --noEmit",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "build": "nuxt build",
+    "dev": "nuxt dev",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare"
+  },
+  "devDependencies": {
+    "@nuxt/devtools": "latest",
+    "@nuxt/test-utils": "^3.6.5",
+    "@nuxtjs/eslint-module": "^4.1.0",
+    "@nuxtjs/google-fonts": "^3.0.2",
+    "@nuxtjs/tailwindcss": "^6.8.0",
+    "@rushstack/eslint-patch": "^1.3.3",
+    "@testing-library/jest-dom": "^6.0.0",
+    "@testing-library/user-event": "^14.3.0",
+    "@testing-library/vue": "^7.0.0",
+    "@types/node": "^18.17.3",
+    "@vitest/coverage-v8": "^0.34.1",
+    "@vue/eslint-config-typescript": "^11.0.3",
+    "eslint": "^8.47.0",
+    "eslint-plugin-vue": "^9.17.0",
+    "jsdom": "^22.1.0",
+    "nuxt": "^3.6.5",
+    "vitest": "^0.34.1",
+    "vue-tsc": "^1.8.8"
+  },
+  "dependencies": {
+    "@ark-ui/vue": "^0.6.0"
+  }
+}
