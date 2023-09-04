@@ -5,3 +5,22 @@
 * {
   @apply text-gray-800 font-sans;
 }
+
+input, textarea {
+  @apply rounded-md border p-1 focus:outline-primary;
+}
+
+html ::-webkit-scrollbar {
+  width: 14px;
+}
+
+html ::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 14px 14px rgba(255,255,255,0);
+  border: solid 4px rgba(255,255,255,0);
+}
+
+html ::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 14px 14px #bbbbbe;
+  border: solid 4px rgba(255,255,255,0);
+  border-radius: 14px;
+}

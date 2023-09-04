@@ -8,6 +8,9 @@ dependencies:
   '@ark-ui/vue':
     specifier: ^0.6.0
     version: 0.6.0(vue@3.3.4)
+  nanoid:
+    specifier: ^4.0.2
+    version: 4.0.2
 
 devDependencies:
   '@nuxt/devtools':
@@ -6743,7 +6746,6 @@ packages:
     resolution: {integrity: sha512-7ZtY5KTCNheRGfEFxnedV5zFiORN1+Y1N6zvPTnHQd8ENUvfaDBeuJDZb2bN/oXwXxu3qkTXDzy57W5vAmDTBw==}
     engines: {node: ^14 || ^16 || >=18}
     hasBin: true
-    dev: true
 
   /napi-wasm@1.1.0:
     resolution: {integrity: sha512-lHwIAJbmLSjF9VDRm9GoVOy9AGp3aIvkjv+Kvz9h16QR3uSVYH78PNQUnT2U4X53mhlnV2M7wrhibQ3GHicDmg==}
