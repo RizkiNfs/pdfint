@@ -6,17 +6,17 @@ interface CommonProps {
   name?:  string
 }
 
-interface ViewNode extends CommonProps {
+export interface ViewNode extends CommonProps {
   type: 'view'
   children?: Node[]
 }
 
-interface PageNode extends CommonProps {
+export interface PageNode extends CommonProps {
   type: 'page'
   children?: Node[]
 }
 
-interface TextNode extends CommonProps {
+export interface TextNode extends CommonProps {
   type: 'text'
   children?: string
 }
@@ -47,7 +47,7 @@ export const useSelectedNode = () => useState<Node>('selected-node')
 
 export const useFileEditor = (fileId?: string) => {
   const route = useRoute()
-  const state = useFileState(fileId || route.query.id as string)
+  const state = useFileState(fileId || route.params.id as string)
   const selectedNode = useSelectedNode()
 
   return {

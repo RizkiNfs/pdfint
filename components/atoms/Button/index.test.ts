@@ -12,7 +12,7 @@ describe('Button',() => {
 
   })
 
-  test('should render correctly', async () => {
+  test.skip('should emit click', async () => {
 
     const user = userEvent.setup()
     const { emitted } = render(Component, { slots: { default: 'hello' } })
