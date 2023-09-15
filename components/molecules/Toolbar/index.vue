@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { nanoid } from 'nanoid'
-import type { Node } from 'composables/editor'
+import type { Node } from '@/composables/editor'
 
-const { selectedNode } = useFileEditor()
+const { selectedNode, initialStyle } = useFileEditor()
 
 
 const addView = () => {
@@ -11,8 +11,8 @@ const addView = () => {
     type: 'view',
     id: nanoid(),
     style: {
-      display: 'flex',
-      flexDirection: 'column'
+      ...initialStyle.common,
+      ...initialStyle.view,
     },
     children: []
   }
@@ -30,8 +30,8 @@ const addText = () => {
     type: 'text',
     id: nanoid(),
     style: {
-      display: 'flex',
-      fontSize: '16px'
+      ...initialStyle.common,
+      ...initialStyle.text,
     },
     children: 'Text'
   }
@@ -46,16 +46,10 @@ const addText = () => {
 
 <template>
   <div class="flex gap-x-4">
-    <a-button
-      @click="addView"
-      v-if="selectedNode?.type !== 'text'"
-    >
+    <a-button @click="addView">
       View
     </a-button>
-    <a-button
-      @click="addText"
-      v-if="selectedNode?.type !== 'text'"
-    >
+    <a-button @click="addText">
       Text
     </a-button>
   </div>

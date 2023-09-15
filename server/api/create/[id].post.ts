@@ -33,7 +33,11 @@ export default defineEventHandler(async (event) => {
     Document, 
     {}, 
     schema.pages.map((page) => {
-      return e(Page, { key: page.id, size: 'A4'}, page.children?.map(renderChildren))
+      return e(
+        Page, 
+        { key: page.id, size: 'A4', style: page.style }, 
+        page.children?.map(renderChildren)
+      )
     })
   )
 

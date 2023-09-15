@@ -2,12 +2,13 @@
 export default defineNuxtConfig({
   devtools: { enabled: true },
   experimental: {
-    
+    reactivityTransform: true
   },
   modules: [
     '@nuxtjs/tailwindcss',
     '@nuxtjs/google-fonts',
-    '@nuxtjs/eslint-module'
+    '@nuxtjs/eslint-module',
+    'nuxt-icon'
   ],
   components: {
     dirs: [

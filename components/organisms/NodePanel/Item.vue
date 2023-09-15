@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { Node } from 'composables/editor'
+import type { Node } from '@/composables/editor'
 
 const props = defineProps<{ node: Node }>()
 

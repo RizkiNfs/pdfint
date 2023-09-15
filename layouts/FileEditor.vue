@@ -25,13 +25,19 @@ const handleCreate = () => {
       </div>
     </header>
     <div class="flex h-screen">
-      <aside class="w-60 p-2 fixed left-0 top-12 h-full border-r">
+      <aside 
+        class="w-60 p-2 fixed left-0 top-12 border-r overflow-auto"
+        :style="{height: 'calc(100vh - 48px)'}"
+      >
         <o-node-panel />
       </aside>
       <main class="flex-1 p-4 flex justify-center mt-12">
         <slot />
       </main>
-      <aside class="w-60 p-2 fixed right-0 top-12 h-full border-l">
+      <aside 
+        class="w-80 p-2 fixed right-0 top-12 border-l overflow-auto"
+        :style="{height: 'calc(100vh - 48px)'}"
+      >
         <o-properties-panel />
       </aside>
     </div>

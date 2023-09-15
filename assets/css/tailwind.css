@@ -6,8 +6,12 @@
   @apply text-gray-800 font-sans;
 }
 
-input, textarea {
+input, textarea, button[data-scope="select"][data-part="trigger"] {
   @apply rounded-md border p-1 focus:outline-primary;
+}
+
+button[data-state="open"][data-part="trigger"] {
+  @apply outline-primary outline outline-2 border-transparent;
 }
 
 html ::-webkit-scrollbar {
@@ -23,4 +27,14 @@ html ::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 14px 14px #bbbbbe;
   border: solid 4px rgba(255,255,255,0);
   border-radius: 14px;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance:textfield;
 }

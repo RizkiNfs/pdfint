@@ -18,8 +18,8 @@ const pageSizes = {
       v-for="(page, index) of state.pages"
       @click="selectedNode = page"
       :key="index"
-      :style="{...(page?.style || {}), width: `${pageSizes.A4.width}px`, height: `${pageSizes.A4.height}px`}"
-      class="outline outline-1 outline-slate-300 relative mt-6"
+      :style="{...((page?.style as any) || {}), width: `${pageSizes.A4.width}px`, height: `${pageSizes.A4.height}px`}"
+      class="outline outline-1 outline-slate-300 relative mt-6 pdf-page"
     >
       <template
         v-for="node of page.children" 

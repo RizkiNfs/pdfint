@@ -1,7 +1,8 @@
+import type { Style } from '@react-pdf/types'
 import { nanoid } from 'nanoid'
 
 interface CommonProps {
-  style: Record<string, any>
+  style: Style
   id:  string
   name?:  string
 }
@@ -33,12 +34,41 @@ export interface File {
   id: string
 }
 
+const initialStyle = {
+  common: {
+    // paddingTop: '0px',
+    // paddingRight: '0px',
+    // paddingBottom: '0px',
+    // paddingLeft: '0px',
+  
+    // marginTop: '0px',
+    // marginRight: '0px',
+    // marginBottom: '0px',
+    // marginLeft: '0px',
+  },
+  view: {
+    display: 'flex', 
+    flexDirection: 'column'
+  },
+  text: {
+    fontSize: '16px',
+    lineHeight: 1.5,
+    // color: 'currentColor'
+    // letterSpacing: '0px',
+    // textAlign: 'left',
+
+    // textDecoration: 'none',
+    // textDecorationStyle: ''
+  }
+  
+} satisfies Record<'common'|'view'|'text',Style>
+
 export const useFileState = (fileId: string) => useState<File>('current-file', () => ({
   id: fileId,
   pages: [{
     id: nanoid(),
     type: 'page',
-    style: { display: 'flex', flexDirection: 'column' },
+    style: { ...initialStyle.view, ...initialStyle.common },
     children: []
   }]
 }))
@@ -53,5 +83,6 @@ export const useFileEditor = (fileId?: string) => {
   return {
     state,
     selectedNode,
+    initialStyle
   }
 }
